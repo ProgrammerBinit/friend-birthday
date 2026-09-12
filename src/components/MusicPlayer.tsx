@@ -82,12 +82,12 @@ export default function MusicPlayer() {
     <>
       <section
         id="music"
-        className="py-16 px-6 text-center max-w-lg mx-auto"
+        className="text-center max-w-lg mx-auto"
       >
         <div className="text-xs tracking-[0.35em] uppercase text-cyan-light mb-3.5 font-semibold">
           Play Something
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-4">
+        <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight">
           Our Favorite <span className="gradient-text">Song</span>
         </h2>
         <p className="text-zinc-400 font-light flex items-center justify-center gap-2">

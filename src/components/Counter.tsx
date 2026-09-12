@@ -32,12 +32,14 @@ function StatCard({ target, label, delay }: { target: number; label: string; del
       viewport={{ once: true }}
       transition={{ delay }}
       whileHover={{ y: -8 }}
-      className="glass rounded-3xl text-center py-9 px-3 cursor-hover"
+      className="glass rounded-2xl sm:rounded-3xl text-center py-6 sm:py-9 px-2 sm:px-3 cursor-hover"
     >
-      <div className="gradient-text font-display font-extrabold text-4xl sm:text-5xl mb-1.5">
+      <div className="gradient-text font-display font-extrabold text-3xl xs:text-4xl sm:text-5xl mb-1.5">
         {value}+
       </div>
-      <div className="text-[11px] text-zinc-400 uppercase tracking-[0.15em]">{label}</div>
+      <div className="text-[10px] xs:text-[11px] text-zinc-400 uppercase tracking-[0.1em] sm:tracking-[0.15em] leading-snug px-1 break-words">
+        {label}
+      </div>
     </motion.div>
   );
 }
@@ -46,7 +48,7 @@ export default function Counter() {
   return (
     <section
       id="counter"
-      className="py-28 px-6"
+      className="py-2 sm:py-0 px-4 sm:px-8"
       style={{
         background:
           "radial-gradient(ellipse at center, rgba(124,58,237,0.08), transparent 70%)",
@@ -56,16 +58,16 @@ export default function Counter() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-10 sm:mb-8"
       >
-        <div className="text-xs tracking-[0.35em] uppercase text-cyan-light mb-3.5 font-semibold">
+        <div className="text-[11px] sm:text-xs tracking-[0.25em] sm:tracking-[0.35em] uppercase text-cyan-light font-semibold">
           In Numbers
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl tracking-tight">
+        <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl tracking-tight">
           Shared <span className="gradient-text">Memories</span>
         </h2>
       </motion.div>
-      <div className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
         {STATS.map((s, i) => (
           <StatCard key={s.label} target={s.target} label={s.label} delay={i * 0.12} />
         ))}

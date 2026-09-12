@@ -17,12 +17,12 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="bg-bg min-h-screen text-zinc-100 selection:bg-purple">
-    <Loader onDone={() => setLoaded(true)} />
-    <CursorTrail />
-    <Navbar show={loaded} />
-    <Hero start={loaded} />
- 
+    <div className="relative w-full min-h-screen overflow-x-hidden bg-bg text-zinc-100 selection:bg-purple">
+      <Loader onDone={() => setLoaded(true)} />
+      <CursorTrail />
+      <Navbar show={loaded} />
+      <Hero start={loaded} />
+
       <Timeline />
       <Gallery />
       <Spotlight />

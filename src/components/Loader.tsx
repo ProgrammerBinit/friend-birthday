@@ -29,7 +29,7 @@ export default function Loader({ onDone }: { onDone: () => void }) {
         <motion.div
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="fixed inset-0 z-[10000] bg-bg flex flex-col items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[10000] bg-bg flex flex-col items-center justify-center overflow-hidden px-6"
         >
           <ParticlesBG className="absolute inset-0 w-full h-full" count={60} />
           <motion.div
@@ -43,11 +43,11 @@ export default function Loader({ onDone }: { onDone: () => void }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative z-10 text-sm tracking-[0.35em] uppercase text-zinc-400 mb-7 font-medium"
+            className="relative z-10 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.35em] uppercase text-zinc-400 mb-7 font-medium text-center whitespace-nowrap"
           >
             Loading Memories...
           </motion.div>
-          <div className="relative z-10 w-56 h-0.5 bg-zinc-800 rounded-full overflow-hidden">
+          <div className="relative z-10 w-44 sm:w-56 h-0.5 bg-zinc-800 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-gradient-to-r from-purple to-cyan rounded-full"
               animate={{ width: `${progress}%` }}

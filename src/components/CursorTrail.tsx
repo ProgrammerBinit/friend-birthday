@@ -4,9 +4,18 @@ export default function CursorTrail() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const [hover, setHover] = useState(false);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia("(max-width: 900px)").matches) return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    setEnabled(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setEnabled(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
     let mx = 0,
       my = 0,
       rx = 0,
@@ -40,7 +49,9 @@ export default function CursorTrail() {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [enabled]);
+
+  if (!enabled) return null;
 
   return (
     <div className="hidden md:block">
