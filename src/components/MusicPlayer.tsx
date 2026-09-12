@@ -122,7 +122,7 @@ export default function MusicPlayer() {
           transition={playing ? { duration: 6, repeat: Infinity, ease: "linear" } : {}}
           className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/15 flex-none"
         >
-          <img src="/photos/6.jpg" alt="album art" className="w-full h-full object-cover" />
+          <img src={`${import.meta.env.BASE_URL}photos/6.jpg`} alt="album art" className="w-full h-full object-cover" />
         </motion.div>
         <button
           onClick={toggle}

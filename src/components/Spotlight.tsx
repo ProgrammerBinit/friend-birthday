@@ -43,7 +43,7 @@ export default function Spotlight() {
             style={{ scrollSnapAlign: "center" }}
           >
             <motion.img
-              src={s.image}
+              src={`${import.meta.env.BASE_URL}${s.image}`}
               alt={s.title}
               whileHover={{ scale: 1.08 }}
               transition={{ duration: 0.6 }}
@@ -60,13 +60,15 @@ export default function Spotlight() {
       <div className="flex justify-center gap-3.5 mt-3">
         <MagneticButton
           onClick={() => scroll(-1)}
-          className="cursor-hover w-11 h-11 rounded-full border border-white/15 bg-white/5 flex items-center justify-center hover:bg-purple hover:border-purple transition-colors"
+          className="cursor-hover w-11 h-11 rounded-full border border-white/15 bg-white/5 flex items-center 
+          justify-center hover:bg-purple hover:border-purple transition-colors"
         >
           <ArrowLeft size={16} />
         </MagneticButton>
         <MagneticButton
           onClick={() => scroll(1)}
-          className="cursor-hover w-11 h-11 rounded-full border border-white/15 bg-white/5 flex items-center justify-center hover:bg-purple hover:border-purple transition-colors"
+          className="cursor-hover w-11 h-11 rounded-full border border-white/15 bg-white/5 flex items-center 
+          justify-center hover:bg-purple hover:border-purple transition-colors"
         >
           <ArrowRight size={16} />
         </MagneticButton>

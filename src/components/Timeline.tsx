@@ -68,7 +68,7 @@ export default function Timeline() {
                 </div>
                 <div className="overflow-hidden rounded-xl">
                   <motion.img
-                    src={m.image}
+                    src={`${import.meta.env.BASE_URL}${m.image}`}
                     alt={m.title}
                     loading="lazy"
                     whileHover={{ scale: 1.08 }}

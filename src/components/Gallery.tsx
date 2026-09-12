@@ -52,9 +52,9 @@ export default function Gallery() {
                 rotations[i % rotations.length]
               }`}
             >
-              <PhotoView src={g.src}>
+              <PhotoView src={`${import.meta.env.BASE_URL}${g.src}`}>
                 <img
-                  src={g.src}
+                  src={`${import.meta.env.BASE_URL}${g.src}`}
                   alt={g.caption}
                   className="w-full rounded"
                 />
