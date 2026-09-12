@@ -96,7 +96,7 @@ export default function MusicPlayer() {
         </p>
       </section>
 
-      <audio ref={audioRef} src="/music/song.mp3" loop preload="auto" />
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}music/song.mp3`} loop preload="auto" />
 
       <motion.div
         initial={{ y: 140 }}
