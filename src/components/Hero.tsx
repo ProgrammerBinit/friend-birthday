@@ -42,7 +42,11 @@ export default function Hero({ start }: { start: boolean }) {
           className="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden mb-6 mx-auto shadow-[0_0_0_3px_rgba(255,255,255,0.06),0_0_60px_rgba(124,58,237,0.55)]"
         >
           <div className="absolute -inset-3.5 rounded-full border-[1.5px] border-dashed border-cyan/40 animate-spin-slow" />
-          <img src="/photos/19.jpg" alt="Rakshit" className="w-full h-fit object-cover" />
+          <img
+            src={`${import.meta.env.BASE_URL}photos/19.jpg`}
+            alt="Rakshit"
+            className="w-full h-fit object-cover"
+          />
         </motion.div>
 
         <motion.div
